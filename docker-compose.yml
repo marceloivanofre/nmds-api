@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    restart: 'always'
+    volumes:
+      - ./.dbcache/mongo/data:/data/db
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: nmds
+      MONGO_INITDB_ROOT_PASSWORD: nmds
